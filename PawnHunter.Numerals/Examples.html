@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Examples</title>
+	<style type="text/css">
+		.output {
+			display: block;
+			background: #222;
+			color: Silver;
+		}
+	</style>
+</head>
+<body>
+	<pre style="font-family: Consolas; font-size: 13px; color: black; background: white;">
+			<span style="color: #2b91af;">Thread</span>.CurrentThread.CurrentCulture&nbsp;=&nbsp;<span
+	style="color: blue;">new</span>&nbsp;<span style="color: #2b91af;">CultureInfo</span>(<span
+		style="color: #a31515;">&quot;ru-RU&quot;</span>);
+			<span style="color: green;">//Thread.CurrentThread.CurrentCulture&nbsp;=&nbsp;new&nbsp;CultureInfo(&quot;uk-UA&quot;);</span>
+ 
+			<span style="color: #2b91af;">NumeralsFormatter</span>&nbsp;formatter&nbsp;=&nbsp;<span
+				style="color: blue;">new</span>&nbsp;<span style="color: #2b91af;">NumeralsFormatter</span>();
+			<span style="color: blue;">string</span>&nbsp;format;
+ 
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;Inbox:&nbsp;{0}&nbsp;{0:W;новое,новых}&nbsp;{0:W;сообщение,сообщения,сообщений}&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;2));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;5));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Inbox: 1 новое сообщение
+			Inbox: 2 новых сообщения
+			Inbox: 5 новых сообщений
+			</span>
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;Inbox:&nbsp;{0}&nbsp;{0:W;нов(ое,ых)}&nbsp;{0:W;сообщени(е,я,й)}&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;2));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;5));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Inbox: 1 новое сообщение
+			Inbox: 2 новых сообщения
+			Inbox: 5 новых сообщений
+			</span>
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:W;Найден(а,о)}&nbsp;{0}&nbsp;{0:W;запис(ь,и,ей)},&nbsp;{0:W;удовлетворяющ(ая,их)}&nbsp;запросу.&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;5));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Найдена 1 запись, удовлетворяющая запросу.
+			Найдено 5 записей, удовлетворяющих запросу.
+			</span>
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:T}&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;13));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Одно
+			Тринадцать
+			</span> 
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:t;f}&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;13));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			одна
+			тринадцать
+			</span>
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:T;M}&nbsp;{0:W;час(,а,ов)}.&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;2));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;10));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Два часа.
+			Десять часов.
+			</span>
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:T;M}&nbsp;{0:W;час(,а,ов)}&nbsp;{1:t;F}&nbsp;{1:W;минут(а,ы,)}.&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;2,&nbsp;10));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;21,&nbsp;1));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;0,&nbsp;0));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Два часа десять минут.
+			Двадцать один час одна минута.
+			Ноль часов ноль минут.
+			</span>
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:T;M}&nbsp;{0:W;рубл(ь,я,ей)}&nbsp;{1:00}&nbsp;коп.&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1,&nbsp;12));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;3,&nbsp;5));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;-3,&nbsp;-5));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			Один рубль 12 коп.
+			Три рубля 05 коп.
+			Минус три рубля -05 коп.
+			</span>
+
+			formatter.CultureInfo&nbsp;=&nbsp;<span style="color: blue;">new</span>&nbsp;<span
+				style="color: #2b91af;">CultureInfo</span>(<span style="color: #a31515;">&quot;en-US&quot;</span>);
+ 
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:T}&nbsp;{0:W;dollar(,s)}&nbsp;and&nbsp;{1:t}&nbsp;{1:W;cent(,s)}.&quot;</span>;
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;1,&nbsp;2));
+			<span style="color: #2b91af;">Console</span>.WriteLine(<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,&nbsp;123456,&nbsp;7));
+			<span style="color: #2b91af;">Console</span>.WriteLine();
+			<span class="output">
+			One dollar and two cents.
+			One hundred and twenty-three thousand, four hundred and fifty-six dollars and seven cents.
+			</span>
+
+			format&nbsp;=&nbsp;<span style="color: #a31515;">&quot;{0:T}&nbsp;{0:W;hour(,s)}&nbsp;and&nbsp;{1:t}&nbsp;{1:W;minute(,s)}.&quot;</span>;
+			<span style="color: blue;">string</span>&nbsp;text&nbsp;=&nbsp;<span style="color: #2b91af;">String</span>.Format(formatter,&nbsp;format,
+				<span style="color: #2b91af;">DateTime</span>.Now.Hour,&nbsp;<span style="color: #2b91af;">DateTime</span>.Now.Minute);
+			<span class="output">
+			Four hours and one minute.
+			</span>
+			
+			</pre>
+</body>
+</html>
