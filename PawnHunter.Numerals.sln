@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnHunter.Numerals", "PawnHunter.Numerals\PawnHunter.Numerals.csproj", "{3E75115F-5A5F-46C7-8C6D-C08624B84847}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PawnHunter.Numerals", "PawnHunter.Numerals\PawnHunter.Numerals.csproj", "{3E75115F-5A5F-46C7-8C6D-C08624B84847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PawnHunter.Numerals.Tests", "PawnHunter.Numerals.Tests\PawnHunter.Numerals.Tests.csproj", "{4E094EA2-D4C8-494F-95AB-D194BB345213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,8 +17,15 @@ Global
 		{3E75115F-5A5F-46C7-8C6D-C08624B84847}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E75115F-5A5F-46C7-8C6D-C08624B84847}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E75115F-5A5F-46C7-8C6D-C08624B84847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E094EA2-D4C8-494F-95AB-D194BB345213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E094EA2-D4C8-494F-95AB-D194BB345213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E094EA2-D4C8-494F-95AB-D194BB345213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E094EA2-D4C8-494F-95AB-D194BB345213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E65B77D-3B54-402B-949F-2DB1FDC3E6F1}
 	EndGlobalSection
 EndGlobal
