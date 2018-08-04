@@ -26,8 +26,8 @@ namespace PawnHunter.Numerals
 		/// </summary>
 		public CultureInfo CultureInfo
 		{
-			get { return _cultureInfo; }
-			set { _cultureInfo = value; }
+			get => _cultureInfo;
+			set => _cultureInfo = value;
 		}
 
 		#endregion Properties
@@ -101,7 +101,7 @@ namespace PawnHunter.Numerals
 
 				default:
 					throw new FormatException(
-						String.Format("The '{0}' culture is not supported.", cultureInfo.DisplayName),
+						$"The '{cultureInfo.DisplayName}' culture is not supported.",
 						new NotSupportedException());
 			}
 		}
@@ -226,7 +226,7 @@ namespace PawnHunter.Numerals
 			if (arg is ulong && Convert.ToUInt64(arg) > long.MaxValue)
 			{
 				throw new FormatException("Argument is too large.",
-					new ArgumentOutOfRangeException("arg", arg,
+					new ArgumentOutOfRangeException(nameof(arg), arg,
 						String.Format("arg must be within -{0} ... {0} range.", long.MaxValue)));
 			}
 
