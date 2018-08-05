@@ -1,39 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFrameworks Condition="'$(LibraryFrameworks)'==''">net45;net46;net47;netstandard20</TargetFrameworks>
-    <TargetFrameworks Condition="'$(LibraryFrameworks)'!=''">$(LibraryFrameworks)</TargetFrameworks>
+    <PackageId>PawnHunter.Numerals</PackageId>
+    <PackageTags>string;format;formatting;IFormatProvider;numerals;nouns;countable;masculine;feminine;russian;ukrainian;english</PackageTags>
+    <Title>Numerals String.Format provider</Title>
+    <Description>Provides formatting of numerals and countable nouns. Russian, ukrainian and english languages are supported.</Description>
+    <Authors>Pawn Hunter;Aleksey Gallyamov</Authors>
+    <PackageProjectUrl>https://github.com/hVostt/PawnHunter.Numerals</PackageProjectUrl>
+    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/hVostt/PawnHunter.Numerals</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Add support .NET Standard 2.0, some refactoring</PackageReleaseNotes>
+    <Company>HotMinds</Company>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <Version>1.1.0</Version>
     <LangVersion>latest</LangVersion>
-    <Configurations>Debug;Release</Configurations>
-    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
-    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
-    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="Examples.html" />
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
+
 </Project>
